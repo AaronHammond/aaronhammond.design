@@ -34,7 +34,7 @@
 button {
     max-width: max-content;
     padding: 16px;
-    background-color: var(--action-1);
+    background-color: var(--primary-5);
     color: white;
     font-size: 24;
     white-space: nowrap;
@@ -48,11 +48,11 @@ button {
 }
 
 button.accent {
-    background-color: var(--accent-1);
+    background-color: var(--tertiary-1);
 }
 
 button:hover {
-    background-color: var(--action-2);
+    background-color: var(--primary-6);
     cursor: pointer;
     --blur-radius: 0.1em;
     --spread-radius: 1px;
@@ -64,12 +64,12 @@ button:hover {
 }
 
 button.accent:hover {
-    background-color: var(--accent-2);
+    background-color: var(--tertiary-2);
 }
 
 body {
     /* generated with https://cssgradient.io/ */
-    background: linear-gradient(160deg, var(--primary-3) 0%, var(--primary-4) 40%, var(--primary-6) 60%, rgba(250, 250, 250, 1) 100%);
+
     height: 100%;
     width: 100%;
     color: white;
@@ -79,11 +79,60 @@ body {
     background-attachment: fixed;
 }
 
+#wedgeContainer {
+    height: 600px;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wedge {
+    position: absolute;
+    height: 300px;
+    left: -100px;
+    right: -100px;
+    transform: rotate(-13deg);
+}
+
+.wedge:nth-child(1) {
+    z-index: -1;
+    top: -300px;
+    background: linear-gradient(160deg, var(--action-1) 0%, var(--action-2) 50%, rgba(250, 250, 250, 1) 100%);
+}
+
+.wedge:nth-child(2) {
+    z-index: -2;
+    top: -100px;
+    background: linear-gradient(160deg, var(--primary-3) 0%, var(--primary-4) 40%, var(--primary-6) 60%, rgba(250, 250, 250, 1) 100%);
+}
+
+.wedge:nth-child(3) {
+    z-index: -3;
+    top: 100px;
+    background: linear-gradient(160deg, var(--tertiary-1) 0%, var(--tertiary-2) 50%, rgba(250, 250, 250, 1) 100%);
+}
+
+.wedge:nth-child(4) {
+    z-index: -4;
+    top: 300px;
+    background: linear-gradient(160deg, var(--accent-1) 0%, var(--accent-2) 50%, rgba(250, 250, 250, 1) 100%);
+
+}
+
+.wedge:nth-child(5) {
+    z-index: -5;
+    top: 500px;
+    background: linear-gradient(160deg, var(--secondary-1) 0%, var(--secondary-2) 50%, rgba(250, 250, 250, 1) 100%);
+}
+
 #logo {
     font-size: 32;
     position: absolute;
     right: 25px;
-    top: 25px;
+    top: 15px;
 }
 
 
@@ -95,13 +144,15 @@ body {
     margin-top: 200px;
     display: grid;
     grid-template-columns: auto auto auto;
-    grid-template-rows: auto 50px auto;
+    grid-template-rows: auto 0 auto;
     grid-row-gap: 16px;
 }
 
 
 #hero .title {
     justify-self: center;
+    text-align: center;
+    margin-top: 25px;
 }
 
 #hero .title:nth-of-type(1) {
@@ -115,7 +166,6 @@ body {
 #hero #buttons {
     grid-area: 3 / 2 / 3 / 2;
     justify-self: center;
-    margin-top: 50px;
 }
 
 #hero #buttons button {
