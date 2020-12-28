@@ -50,19 +50,20 @@ button {
     font-size: 24;
     white-space: nowrap;
     border: none;
-    border-radius: 3px;
-    box-shadow: 0px 2px 4px 2px var(--violet-1);
+    border-radius: 5px;
+    box-shadow: var(--box-shadow) var(--violet-1);
+    --box-shadow: 0px 2px 8px 2px;
 }
 
 button.accent {
     background-color: var(--indigo-2);
-    box-shadow: 0px 2px 4px 2px var(--indigo-1);
+    box-shadow: var(--box-shadow) var(--indigo-1);
 }
 
 button:hover {
     background-color: var(--violet-1);
     cursor: pointer;
-    box-shadow: 0px 2px 4px 3px white;
+    box-shadow: 0px 2px 16px 0px white;
 }
 
 button.accent:hover {
@@ -233,27 +234,24 @@ body {
 }
 
 #bio {
+    border-radius: 8px;
     font-size: 20px;
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
-    max-width: 700px;
+    max-width: 800px;
     padding: 32px;
     background-color: var(--violet-2);
     display: grid;
-    grid-template-columns: 25% 50% 25%;
+    grid-template-columns: 325px auto;
     grid-template-rows: auto auto;
-    grid-column-gap: 32px;
-    box-shadow:
-        8px 8px var(--violet-1),
-        -8px 8px var(--violet-1),
-        8px -8px var(--violet-1),
-        -8px -8px var(--violet-1);
+    box-shadow: 0 4px 0 4px var(--violet-1);
 }
 
 #bio p {
     text-align: justify;
     text-indent: 16px;
+    padding-right: 16px;
 }
 
 #bio a {
@@ -274,8 +272,8 @@ body {
     margin-top: -32px;
     background-color: var(--orange-1);
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 250px;
     justify-self: center;
     align-self: center;
     position: relative;
@@ -283,8 +281,8 @@ body {
 
 #headshot img {
     border-radius: 50%;
-    width: 150x;
-    height: 150px;
+    width: 250px;
+    height: 250px;
     top: -15px;
     left: 0;
     position: absolute;
@@ -292,6 +290,7 @@ body {
 }
 
 .service {
+    border-radius: 8px;
     margin-bottom: 50px;
     margin-left: auto;
     margin-right: auto;
@@ -300,42 +299,29 @@ body {
     display: grid;
     grid-template-columns: 325px auto;
     grid-template-rows: auto;
+
+    --box-shadow: 0 -4px 0 4px;
 }
 
 .service:nth-child(1) {
     background-color: var(--red-2);
-    box-shadow:
-        8px 8px var(--red-1),
-        -8px 8px var(--red-1),
-        8px -8px var(--red-1),
-        -8px -8px var(--red-1);
+    box-shadow: var(--box-shadow) var(--red-1);
 }
 
 .service:nth-child(2) {
     background-color: var(--orange-2);
-    box-shadow:
-        8px 8px var(--orange-1),
-        -8px 8px var(--orange-1),
-        8px -8px var(--orange-1),
-        -8px -8px var(--orange-1);
+    box-shadow: var(--box-shadow) var(--orange-1);
+
 }
 
 .service:nth-child(3) {
     background-color: var(--indigo-2);
-    box-shadow:
-        8px 8px var(--indigo-1),
-        -8px 8px var(--indigo-1),
-        8px -8px var(--indigo-1),
-        -8px -8px var(--indigo-1);
+    box-shadow: var(--box-shadow) var(--indigo-1);
 }
 
 .service:nth-child(4) {
     background-color: var(--violet-2);
-    box-shadow:
-        8px 8px var(--violet-1),
-        -8px 8px var(--violet-1),
-        8px -8px var(--violet-1),
-        -8px -8px var(--violet-1);
+    box-shadow: var(--box-shadow) var(--violet-1);
 }
 
 .service .title {
