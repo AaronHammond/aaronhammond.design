@@ -179,7 +179,7 @@ body {
 
 #logo {
     font-size: 32;
-    position: absolute;
+    position: fixed;
     right: 25px;
     top: 15px;
     color: var(--violet-1)
