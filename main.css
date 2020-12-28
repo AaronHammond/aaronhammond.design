@@ -1,31 +1,4 @@
 :root {
-    --offset-1: #73B309;
-    --offset-2: #B7FF40;
-
-
-    --primary-1: #734680;
-    --primary-2: #921BB3;
-    --primary-3: #AB33CC;
-
-    --primary-4: #D53FFF;
-    --primary-5: #DB59FF;
-    --primary-6: #E68CFF;
-
-    --action-2: rgb(103, 255, 199);
-    --action-1: #26FFAE;
-
-    --accent-1: #FFCE59;
-    --accent-2: rgb(254, 213, 116);
-
-    --secondary-1: rgb(247, 61, 135);
-    --secondary-2: #FF4D93;
-
-    --tertiary-1: rgb(88, 37, 254);
-    --tertiary-2: #6433FF;
-
-
-
-
     --red-1: #FB6E64;
     --red-2: #FA2818;
     --red-3: #C72014;
@@ -82,8 +55,8 @@ button {
 }
 
 button.accent {
-    background-color: var(--blue-2);
-    box-shadow: 0px 2px 4px 2px var(--blue-1);
+    background-color: var(--indigo-2);
+    box-shadow: 0px 2px 4px 2px var(--indigo-1);
 }
 
 button:hover {
@@ -93,11 +66,10 @@ button:hover {
 }
 
 button.accent:hover {
-    background-color: var(--blue-1);
+    background-color: var(--indigo-1);
 }
 
 body {
-    height: 100%;
     width: 100%;
     color: white;
     font-family: Helvetica, sans-serif;
@@ -123,6 +95,7 @@ body {
     left: -100px;
     right: -100px;
     transform: rotate(-13deg);
+    --transition-time: 5s
 }
 
 .wedge:nth-child(1) {
@@ -130,38 +103,77 @@ body {
     top: -500px;
     height: 400px;
     background: linear-gradient(160deg, var(--red-3) 0%, var(--red-2) 25%, var(--red-1) 75%, rgba(250, 250, 250, 1) 100%);
+    animation: RollingBackground var(--transition-time) ease infinite;
+    background-size: 400% 400%;
 }
 
 .wedge:nth-child(2) {
     z-index: -2;
     top: -100px;
-    background: linear-gradient(160deg, var(--orange-3) 0%, var(--orange-2) 40%, var(--orange-1) 60%, rgba(250, 250, 250, 1) 100%);
+    background: linear-gradient(160deg, var(--orange-2) 0%, var(--orange-1) 50%, rgba(250, 250, 250, 1) 100%);
+    animation: ReverseRollingBackground var(--transition-time) ease infinite;
+    background-size: 400% 400%;
 }
 
 .wedge:nth-child(3) {
     z-index: -3;
     top: 100px;
-    background: linear-gradient(160deg, var(--yellow-3) 0%, var(--yellow-2) 40%, var(--yellow-1) 60%, rgba(250, 250, 250, 1) 100%);
+    background: linear-gradient(160deg, var(--yellow-2) 0%, var(--yellow-1) 50%, rgba(250, 250, 250, 1) 100%);
+    animation: RollingBackground var(--transition-time) ease infinite;
+    background-size: 400% 400%;
 }
 
 .wedge:nth-child(4) {
     z-index: -4;
     top: 300px;
     background: linear-gradient(160deg, var(--green-3) 0%, var(--green-2) 40%, var(--green-1) 60%, rgba(250, 250, 250, 1) 100%);
-
+    animation: ReverseRollingBackground var(--transition-time) ease infinite;
+    background-size: 400% 400%;
 }
 
 .wedge:nth-child(5) {
     z-index: -5;
     top: 500px;
     background: linear-gradient(160deg, var(--blue-3) 0%, var(--blue-2) 40%, var(--blue-1) 60%, rgba(250, 250, 250, 1) 100%);
+    animation: RollingBackground var(--transition-time) ease infinite;
+    background-size: 400% 400%;
 }
 
 .wedge:nth-child(6) {
     z-index: -5;
     top: 700px;
     background: linear-gradient(160deg, var(--violet-3) 0%, var(--violet-2) 40%, var(--violet-1) 60%, rgba(250, 250, 250, 1) 100%);
+    animation: ReverseRollingBackground var(--transition-time) ease infinite;
+    background-size: 400% 400%;
     height: 400px;
+}
+
+@keyframes RollingBackground {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes ReverseRollingBackground {
+    0% {
+        background-position: 100% 50%
+    }
+
+    50% {
+        background-position: 0% 50%
+    }
+
+    100% {
+        background-position: 100% 50%
+    }
 }
 
 #logo {
@@ -170,6 +182,14 @@ body {
     right: 25px;
     top: 15px;
     color: var(--violet-1)
+}
+
+#footer {
+    z-index: -1;
+    text-align: center;
+    bottom: 0px;
+    color: var(--indigo-2);
+    margin-bottom: 30px;
 }
 
 
@@ -184,6 +204,7 @@ body {
     grid-template-rows: auto 0 auto;
     grid-row-gap: 16px;
     color: var(--violet-2);
+    text-shadow: -2px 2px 8px var(--violet-1);
 }
 
 
@@ -236,7 +257,7 @@ body {
 }
 
 #bio a {
-    color: var(--accent-1);
+    color: var(--yellow-1);
 }
 
 #bio p:nth-of-type(1) {
@@ -251,7 +272,7 @@ body {
     grid-area: 1 / 1 / span 2 / 1;
     margin: 16px;
     margin-top: -32px;
-    background-color: var(--accent-1);
+    background-color: var(--orange-1);
     border-radius: 50%;
     width: 150px;
     height: 150px;
@@ -345,7 +366,7 @@ body {
 }
 
 #services {
-    padding-bottom: 75px;
+    padding-bottom: 50px;
 }
 
 #services .buttons {
