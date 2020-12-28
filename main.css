@@ -1,0 +1,269 @@
+:root {
+    --offset-1: #73B309;
+    --offset-2: #B7FF40;
+
+
+    --primary-1: #734680;
+    --primary-2: #921BB3;
+    --primary-3: #AB33CC;
+
+    --primary-4: #D53FFF;
+    --primary-5: #DB59FF;
+    --primary-6: #E68CFF;
+
+    --action-2: rgb(103, 255, 199);
+    --action-1: #26FFAE;
+
+    --accent-1: #FFCE59;
+    --accent-2: rgb(254, 213, 116);
+
+    --secondary-1: rgb(247, 61, 135);
+    --secondary-2: #FF4D93;
+
+    --tertiary-1: rgb(88, 37, 254);
+    --tertiary-2: #6433FF;
+}
+
+
+
+.title {
+    font-size: 64;
+    white-space: nowrap;
+}
+
+button {
+    max-width: max-content;
+    padding: 16px;
+    background-color: var(--action-1);
+    color: white;
+    font-size: 24;
+    white-space: nowrap;
+    border: none;
+    border-radius: 3px;
+    box-shadow:
+        0.1em 0.1em,
+        -0.1em 0.1em,
+        0.1em -0.1em,
+        -0.1em -0.1em white;
+}
+
+button.accent {
+    background-color: var(--accent-1);
+}
+
+button:hover {
+    background-color: var(--action-2);
+    cursor: pointer;
+    --blur-radius: 0.1em;
+    --spread-radius: 1px;
+    box-shadow:
+        0.1em 0.1em var(--blur-radius) var(--spread-radius),
+        -0.1em 0.1em var(--blur-radius) var(--spread-radius),
+        0.1em -0.1em var(--blur-radius) var(--spread-radius),
+        -0.1em -0.1em var(--blur-radius) var(--spread-radius) white;
+}
+
+button.accent:hover {
+    background-color: var(--accent-2);
+}
+
+body {
+    /* generated with https://cssgradient.io/ */
+    background: linear-gradient(160deg, var(--primary-3) 0%, var(--primary-4) 40%, var(--primary-6) 60%, rgba(250, 250, 250, 1) 100%);
+    height: 100%;
+    width: 100%;
+    color: white;
+    font-family: Helvetica, sans-serif;
+    cursor: default;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#logo {
+    font-size: 32;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+}
+
+
+#hero {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 75px;
+    margin-top: 200px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto 50px auto;
+    grid-row-gap: 16px;
+}
+
+
+#hero .title {
+    justify-self: center;
+}
+
+#hero .title:nth-of-type(1) {
+    grid-area: 1 / 2 / 1 / 2;
+}
+
+#hero .title:nth-of-type(2) {
+    grid-area: 2 / 2 / 2 /2;
+}
+
+#hero #buttons {
+    grid-area: 3 / 2 / 3 / 2;
+    justify-self: center;
+    margin-top: 50px;
+}
+
+#hero #buttons button {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+#bio {
+    font-size: 20px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+    padding: 32px;
+    background-color: var(--offset-1);
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: auto auto;
+    grid-column-gap: 32px;
+    box-shadow:
+        8px 8px var(--offset-2),
+        -8px 8px var(--offset-2),
+        8px -8px var(--offset-2),
+        -8px -8px var(--offset-2);
+}
+
+#bio p {
+    text-align: justify;
+    text-indent: 16px;
+}
+
+#bio a {
+    color: var(--accent-1);
+}
+
+#bio p:nth-of-type(1) {
+    grid-area: 1 / 2 / 1 / 2;
+}
+
+#bio p:nth-of-type(2) {
+    grid-area: 2 / 2 / 2 / 2;
+}
+
+#headshot {
+    grid-area: 1 / 1 / span 2 / 1;
+    margin: 16px;
+    margin-top: -32px;
+    background-color: var(--accent-1);
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    justify-self: center;
+    align-self: center;
+    position: relative;
+}
+
+#headshot img {
+    border-radius: 50%;
+    width: 150x;
+    height: 150px;
+    top: -15px;
+    left: 0;
+    position: absolute;
+    z-index: 15;
+}
+
+.service {
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800;
+    padding: 32px;
+    display: grid;
+    grid-template-columns: 33% 67%;
+    grid-template-rows: auto;
+}
+
+.service:nth-child(1) {
+    background-color: var(--secondary-1);
+    box-shadow:
+        8px 8px var(--secondary-2),
+        -8px 8px var(--secondary-2),
+        8px -8px var(--secondary-2),
+        -8px -8px var(--secondary-2);
+}
+
+.service:nth-child(2) {
+    background-color: var(--tertiary-1);
+    box-shadow:
+        8px 8px var(--tertiary-2),
+        -8px 8px var(--tertiary-2),
+        8px -8px var(--tertiary-2),
+        -8px -8px var(--tertiary-2);
+}
+
+.service:nth-child(3) {
+    background-color: var(--primary-3);
+    box-shadow:
+        8px 8px var(--primary-4),
+        -8px 8px var(--primary-4),
+        8px -8px var(--primary-4),
+        -8px -8px var(--primary-4);
+}
+
+.service:nth-child(4) {
+    background-color: var(--offset-1);
+    box-shadow:
+        8px 8px var(--offset-2),
+        -8px 8px var(--offset-2),
+        8px -8px var(--offset-2),
+        -8px -8px var(--offset-2);
+}
+
+.service .title {
+    grid-area: 1 / 1 / 1 / 1;
+    white-space: normal;
+    align-self: center;
+    padding-right: 25px;
+    font-size: 48;
+
+}
+
+.service p {
+    grid-area: 1 / 2 / 1 / 2;
+    font-size: 24;
+    text-align: justify;
+    text-indent: 16px;
+}
+
+#services>.title {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 48;
+}
+
+#services {
+    padding-bottom: 75px;
+}
+
+#services .buttons {
+    text-align: center;
+    padding-top: 25px;
+}
+
+#services .buttons button {
+    margin-left: 16px;
+    margin-right: 16px;
+}
